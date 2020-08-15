@@ -1,0 +1,9 @@
+.heading {
+    text-align: center;
+    font-weight: bold;
+    background-color: midnightblue;
+        color: white;
+    font-size: 48px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
