@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
 
     <title>Weather Hub</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div>
         <h1 class="heading">
             Weather Dashboard
@@ -22,30 +25,44 @@
         <div class="col-4">
             <h6>Search for a city:</h6>
             <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="City Name" aria-label="Search by City" aria-describedby="button-addon2">
+                <input type="text" class="form-control" placeholder="City Name" aria-label="Search by City"
+                    aria-describedby="button-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search<i class="fas fa-search"></i></button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search<i
+                            class="fas fa-search"></i></button>
                 </div>
-              </div>
-        <div class="row" id="results">results will prepend here
-        </div>
+            </div>
+            <div class="row" id="results">results will prepend here
+            </div>
         </div>
         <div class="col-8">
             <div class="jumbotron">
-                <h1 class="display-4" id="city-name">City Name</h1>
-               <ul>
-                   <li id="temperature">Temperature</li>
-                   <li id=humidity>Humidity</li>
-                   <li id="windSpeed">Wind Speed</li>
-                   <li id="uvIndex">UV Index</li>
-              </div>
+                <div id="forecastToday">
+                    <h1 class="display-4" id="city-name">City Name</h1>
+                    <ul>
+                        <li id="temperature">Temperature</li>
+                        <li id=humidity>Humidity</li>
+                        <li id="windSpeed">Wind Speed</li>
+                        <li id="uvIndex">UV Index</li>
+                </div>
+                <div id="forecastFiveDay">
+                    <h4>5 Day Forecast:</h4>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
