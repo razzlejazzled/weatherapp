@@ -1,3 +1,5 @@
+
+
 $(".btn-search").on("click", function (e) {
     e.preventDefault();
 
@@ -5,12 +7,11 @@ $(".btn-search").on("click", function (e) {
     $(".btn-search").on("click", function () {
 
         let cityNameInput = $("#citySearch").val();
-       
-        localStorage.setItem(key, cityNameInput);
+    
         let cityQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityNameInput + "&units=imperial&appid=6e386d169b465bbe84362a63b6f2a0b8";
         var date = new Date();
 
-        var savedCities = localStorage.getItem("savedCities", [])
+       
         $.ajax({
             url: cityQueryURL,
             method: "GET",
