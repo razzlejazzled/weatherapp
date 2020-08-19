@@ -5,28 +5,31 @@ $(".btn-search").on("click", function (e) {
     $(".btn-search").on("click", function () {
 
         let cityNameInput = $("#citySearch").val();
-        let key = cityNameInput.slice(0, 3);
-        console.log(key);
+       
         localStorage.setItem(key, cityNameInput);
         let cityQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityNameInput + "&units=imperial&appid=6e386d169b465bbe84362a63b6f2a0b8";
         var date = new Date();
+
+        var savedCities = localStorage.getItem("savedCities", [])
         $.ajax({
             url: cityQueryURL,
             method: "GET",
         })
             .then(function (response) {
-
+                console.log(response)
+            
             var returnedWeather = Object.values(response);
             var returnedWeather2 = Object.values(response.weather[0]);
             cityNM = returnedWeather[11];
             cityName = returnedWeather[11] + "" + "(" + date + ")";
+            temperature = returnedWeather[3].temp
             humidity = returnedWeather[3].humidity;
             windSpeed = returnedWeather[5].speed;
             iconNumber = (returnedWeather2[3]);
             latitude = returnedWeather[0].lat;
             longitude = returnedWeather[0].lon;
 
-            let UVQueryURL = "http://api.openweathermap.org/data/2.5uvi?&appid=6e386d169b465bbe84362a63b6f2a0b8&lat=" + latitude + "&lon=" + longitude;
+            let UVQueryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=6e386d169b465bbe84362a63b6f2a0b8&lat=" + latitude + "&lon=" + longitude;
             $.ajax({
                 url: UVQueryURL,
                 method: "GET"
@@ -50,8 +53,8 @@ $(".btn-search").on("click", function (e) {
                             $("#fiveDayForecast").html("");
                             for (var i = 0; i < 40; i++) {
                                 var element = targetedF5[i];
-                                if (targetedF5[y].dt_txt.substring(11) === "15:00:00") {
-                                    var fDate5 = element.dt_txt.slice(5, 10) + "-" + element.dt_txt.slice(o, 4);
+                                if (targetedF5[i].dt_txt.substring(11) === "15:00:00") {
+                                    var fDate5 = element.dt_txt.slice(5, 10) + "-" + element.dt_txt.slice(0, 4);
                                     var iconNumber5 = element.weather[0].icon;
                                     var temperature5 = ((element.main.temp - 273.15) * 1.80 + 32).toFixed(2);
                                     var humidity5 = element.main.humidity;
